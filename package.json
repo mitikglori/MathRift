@@ -1,0 +1,10 @@
+{
+  "name": "mathrift",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*", "infra/*"],
+  "scripts": {
+    "dev": "concurrently -k \"npm run dev -w apps/web\" \"npm run dev -w apps/api\"",
+    "build": "npm run build -w packages/math-engine && npm run build -w apps/web && npm run build -w apps/api",
+    "typecheck": "tsc -b -v"
+  }
+}
